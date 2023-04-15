@@ -8,7 +8,11 @@ class EmployeeService{
     getAllEmployee(){
         return axios.get(BASE_URL);
     }
+   // method to save an employee
 
+   saveEmployee(employeeData){
+       return axios.put(BASE_URL,employeeData)
+   }
 
 }
 export default new EmployeeService();
