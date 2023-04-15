@@ -1,0 +1,43 @@
+.container {
+    /* background-color: rgb(171, 195, 195); */
+    text-align: center;
+    
+    position: relative; /* add this to make button position absolute */
+    padding-top: 90px;
+  }
+  
+  .btn {
+    position: absolute;
+    top: 25px; 
+    left: 25px; 
+    height: 50px;
+    background-color: #3b51c0;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: rgb(29, 33, 36);
+    font-weight: bold;
+  }
+  
+  .text {
+    font-size: 52px; /* add this to set the font size */
+    color: #2b1919; /* add this to set the font color */
+    font-weight: bold; /* add this to set the font weight */
+    
+  }
+  .table{
+    display: flex;
+    justify-content: center;
+  }
+  thead {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 20px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 10px;
+  }
+

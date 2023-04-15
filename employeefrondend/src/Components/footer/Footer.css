@@ -1,4 +1,5 @@
 .footer{
+    background-color: rgb(55, 63, 113);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -6,4 +7,5 @@
     text-align: center;
     padding-top: 25px;
     font-weight:bold ;
+    color: #e0cbcb;
 }
