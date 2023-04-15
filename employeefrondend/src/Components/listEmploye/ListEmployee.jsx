@@ -34,7 +34,17 @@ function getAllEmployee(){
                 <th>Actions</th>
             </thead>
             <tbody>
-
+            {employeeArray.map(employee=>
+              <tr  id = {employee.id}>
+                <td>{employee.id}</td>
+                <td>{employee.firstname}</td>
+                <td>{employee.lastname}</td>
+                <td>{employee.email}</td>
+                <td>
+                 <button className='updateB'> <a  href='' >Update</a></button>{" "}
+                 <button className='deleteB'><a href='' >Delete</a></button>
+                </td>
+              </tr>) }
             </tbody>
         </table>
     </div>
