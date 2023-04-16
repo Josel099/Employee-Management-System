@@ -13,9 +13,9 @@ function App() {
   <div className="routerContainer">
   <Routes>
     <Route path="/" element={<ListEmployee/>}/>
-    <Route path="/employee" element={<AddEmployee/>}/>
+    <Route path="/employee" element={<ListEmployee/>}/>
     <Route path="/add-employee" element={<AddEmployee/>}/>
-    <Route path="/" element={<AddEmployee/>}/>
+    <Route path="/add-employee/:id" element={<AddEmployee/>}/>
   </Routes>
   </div>
   <Footer/>

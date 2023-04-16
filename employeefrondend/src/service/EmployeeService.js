@@ -14,6 +14,10 @@ class EmployeeService{
        return axios.post(BASE_URL,employeeData);
    }
 
+
+   updateEmployee(id , employeeData){
+    return axios.put(`BASE_URL/${id}`,employeeData)
+   }
 }
 
 export default new EmployeeService();

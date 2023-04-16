@@ -41,7 +41,7 @@ function getAllEmployee(){
                 <td>{employee.lastname}</td>
                 <td>{employee.email}</td>
                 <td>
-                 <button className='updateB'> <a  href='' >Update</a></button>{" "}
+                 <button className='updateB'> <Link to={`/add-employee/:${employee.id}`}> Update</Link></button>{" "}
                  <button className='deleteB'><a href='' >Delete</a></button>
                 </td>
               </tr>) }
