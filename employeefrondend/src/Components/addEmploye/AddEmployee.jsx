@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./AddEmployee.css"
 import EmployeeService from '../../service/EmployeeService';
 import {useNavigate,Link ,useParams} from 'react-router-dom';
@@ -30,6 +30,16 @@ const employeeData ={firstname: firstName,
             } 
     }
 
+
+        useEffect(()=>{
+            if(id){
+            EmployeeService.getEmployeeById(id).then(res=>{
+                setFirstName(res.data.firstName);
+                setLastName(res.data.lastName);
+                setEmail(res.data.email)
+            }).catch(e=>console.log(e));
+        }
+        },[]);
 
 
 //send data to the databasee and navigate to homepage when it is sucessfull
