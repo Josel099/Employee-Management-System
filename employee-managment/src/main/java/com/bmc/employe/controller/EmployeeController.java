@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/employee")
+@CrossOrigin("*")
 public class EmployeeController {
 
     @Autowired
-    private EmployeeService employeeService; // we are bringing in EmployeService instance
+    private EmployeeService employeeService;
+    // we are bringing in EmployeService instance
 
 //    here is a postrequest .we  gonna be saving an employee
     @PostMapping

@@ -11,8 +11,9 @@ class EmployeeService{
    // method to save an employee
 
    saveEmployee(employeeData){
-       return axios.put(BASE_URL,employeeData);
+       return axios.post(BASE_URL,employeeData);
    }
 
 }
+
 export default new EmployeeService();

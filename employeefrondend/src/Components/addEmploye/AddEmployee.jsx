@@ -20,13 +20,12 @@ function saveEmployee(e){
     if(employeeData.firstName !=="" && employeeData.lastName !== "" && employeeData.email !==""){
         e.preventDefault();
         EmployeeService.saveEmployee(employeeData)
-        .then(navigate("/employee")).catch(e=>console.log(e));
+        .then(navigate("/")).catch(e=>console.log(e));
+        console.log(employeeData);
     }else{
         alert("please fill all inputs!");
     }
     
-  
-
 }
 
   return (
@@ -56,7 +55,7 @@ function saveEmployee(e){
                        
                             <div className='buttons'>
                             <button className='btn-save' onClick={(e)=>saveEmployee(e)}>Save</button> {" "}
-                           <button className='btn-cancel'> <Link  to={"/employee"}>Cancel</Link></button>
+                           <button className='btn-cancel'> <Link  to={"/"}>Cancel</Link></button>
                            </div>
                            
                            
