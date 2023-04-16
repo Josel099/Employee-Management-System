@@ -13,7 +13,9 @@ const[email,setEmail] = useState('');
 
 const navigate = useNavigate();
 
-const employeeData ={firstName,lastName,email}; //bundle the input from the user 
+const employeeData ={firstname: firstName,
+    lastname: lastName,
+    email: email}; //bundle the input from the user 
 
 //send data to the databasee and navigate to homepage when it is sucessfull
 function saveEmployee(e){
