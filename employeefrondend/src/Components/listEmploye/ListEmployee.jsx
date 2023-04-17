@@ -14,6 +14,7 @@ const ListEmployeeComponent = () => {
 useEffect(()=>{
   getAllEmployee();
 },[]);
+
 function getAllEmployee(){
   EmployeeService.getAllEmployee()
   .then(res=>{setEmployeeArray(res.data);console.log(res)})
@@ -22,7 +23,7 @@ function getAllEmployee(){
 
 function deleteEmployee(e , id){
   e.preventDefault();
-EmployeeService.deleteEmployee(id).then(EmployeeService.getAllEmployee()).catch(e=>console.log(e));
+EmployeeService.deleteEmployee(id).then(getAllEmployee()).catch(e=>console.log(e));
 }
 
   return (
