@@ -23,5 +23,9 @@ getEmployeeById(id) {
     return axios.get(`${BASE_URL}/${id}`);
 }
 
+deleteEmployee(id) {
+    return axios.delete(BASE_URL + "/" + id);
+}
+
 }
 export default new EmployeeService();

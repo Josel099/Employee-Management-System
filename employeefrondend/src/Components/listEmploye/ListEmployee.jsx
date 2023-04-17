@@ -20,6 +20,10 @@ function getAllEmployee(){
   .catch(e => console.log(e));
 }
 
+function deleteEmployee(e , id){
+  e.preventDefault();
+EmployeeService.deleteEmployee(id).then(EmployeeService.getAllEmployee()).catch(e=>console.log(e));
+}
 
   return (
     <div className='container'>
@@ -42,7 +46,7 @@ function getAllEmployee(){
                 <td>{employee.email}</td>
                 <td>
                  <button className='updateB'> <Link to={`/add-employee/${employee.id}`}> Update</Link></button>{" "}
-                 <button className='deleteB'><a href='' >Delete</a></button>
+                 <button onClick={(e) => {deleteEmployee(e , employee.id)}} className='deleteB'><a href='' >Delete</a></button>
                 </td>
               </tr>) }
             </tbody>
