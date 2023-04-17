@@ -49,7 +49,10 @@ function saveEmployee(e){
 
         if(id){
             EmployeeService.updateEmployee(id ,employeeData)
-            .then(navigate("/employee")).catch(e=>console.log(e));
+            .then(()=>{
+                EmployeeService.getAllEmployee();
+                navigate("/employee")})
+                .catch(e=>console.log(e));
             console.log(employeeData);
         }else{
             EmployeeService.saveEmployee(employeeData)
