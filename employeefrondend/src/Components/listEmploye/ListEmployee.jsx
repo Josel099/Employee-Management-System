@@ -23,7 +23,8 @@ function getAllEmployee(){
 
 function deleteEmployee(e , id){
   e.preventDefault();
-EmployeeService.deleteEmployee(id).then(getAllEmployee()).catch(e=>console.log(e));
+EmployeeService.deleteEmployee(id).then(()=>{getAllEmployee()})
+.catch(e=>console.log(e));
 }
 
   return (
