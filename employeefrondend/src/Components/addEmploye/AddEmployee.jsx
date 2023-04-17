@@ -44,7 +44,7 @@ const employeeData ={firstname: firstName,
 
 //send data to the databasee and navigate to homepage if it is sucessfull !
 function saveEmployee(e){
-    //e.preventDefault();// The e.preventDefault() statement is used to prevent the default behavior of an event in JavaScript.
+    e.preventDefault();// The e.preventDefault() statement is used to prevent the default behavior of an event in JavaScript.
     if(employeeData.firstname !=="" && employeeData.lastname !== "" && employeeData.email !==""){
 
         if(id){
@@ -53,7 +53,11 @@ function saveEmployee(e){
             console.log(employeeData);
         }else{
             EmployeeService.saveEmployee(employeeData)
-            .then(navigate("/employee")).catch(e=>console.log(e));
+            .then(() => {
+                EmployeeService.getAllEmployee();
+                navigate("/employee");
+            })
+            .catch(e=>console.log(e));
             console.log(employeeData);
         }
     }else{
