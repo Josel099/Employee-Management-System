@@ -10,7 +10,7 @@ const[firstName,setFirstName]=useState('');
 const[lastName,setLastName]=useState('');
 const[email,setEmail] = useState('');
 
-const {id} = useParams();//this is used to update the addemploye title when update navigation .
+const {id} = useParams();//this is used to extract the id from the url . to updateEmployee process.
 
 const navigate = useNavigate();
 
@@ -34,22 +34,28 @@ const employeeData ={firstname: firstName,
         useEffect(()=>{
             if(id){
             EmployeeService.getEmployeeById(id).then(res=>{
-                setFirstName(res.data.firstName);
-                setLastName(res.data.lastName);
-                setEmail(res.data.email)
+                setFirstName(res.data.firstname);
+                setLastName(res.data.lastname);
+                setEmail(res.data.email);
             }).catch(e=>console.log(e));
         }
         },[]);
 
 
-//send data to the databasee and navigate to homepage when it is sucessfull
+//send data to the databasee and navigate to homepage if it is sucessfull !
 function saveEmployee(e){
+    e.preventDefault();// The e.preventDefault() statement is used to prevent the default behavior of an event in JavaScript.
     if(employeeData.firstName !=="" && employeeData.lastName !== "" && employeeData.email !==""){
-        e.preventDefault();
-        EmployeeService.saveEmployee(employeeData)
-        .then(navigate("/employee")).catch(e=>console.log(e));
-        console.log(employeeData);
-        
+
+        if(id){
+            EmployeeService.updateEmployee(id ,employeeData)
+            .then(navigate("/employee")).catch(e=>console.log(e));
+            console.log(employeeData);
+        }else{
+            EmployeeService.saveEmployee(employeeData)
+            .then(navigate("/employee")).catch(e=>console.log(e));
+            console.log(employeeData);
+        }
     }else{
         alert("please fill all inputs!");
     }
